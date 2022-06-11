@@ -1,4 +1,7 @@
 <?php
+require_once 'header.php';
+
+
 // Process delete operation after confirmation
 if (isset($_POST["id"]) && !empty($_POST["id"])) {
     // Include config file
@@ -39,41 +42,34 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Delete Record</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .wrapper {
-            width: 600px;
-            margin: 0 auto;
-        }
-    </style>
-</head>
+<aside class="p-12 bg-gray-100 sm:p-16 lg:p-24">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <div class="max-w-xl mx-auto text-center">
+            <p class="text-sm font-medium text-gray-500">
+                Delete Record
+            </p>
+            <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>" />
+            <p class="mt-2 text-3xl font-bold sm:text-5xl">
+                Are you sure you want to delete this employee record?
+            </p>
 
-<body>
-    <div class="wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="mt-5 mb-3">Delete Record</h2>
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                        <div class="alert alert-danger">
-                            <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>" />
-                            <p>Are you sure you want to delete this employee record?</p>
-                            <p>
-                                <input type="submit" value="Yes" class="btn btn-danger">
-                                <a href="../index.php" class="btn btn-secondary ml-2">No</a>
-                            </p>
-                        </div>
-                    </form>
-                </div>
+            <div class="mt-8 sm:items-center sm:justify-center sm:flex">
+
+                <input type="submit" value="Yes" class="block px-5 py-3 font-medium text-white bg-red-500 rounded-lg shadow-xl hover:bg-red-600">
+
+                <a href="../index.php" class="block px-5 py-3 mt-4 font-medium text-blue-500 rounded-lg hover:text-blue-600 sm:mt-0">
+                    No
+                </a>
+
             </div>
         </div>
-    </div>
-</body>
+    </form>
+</aside>
 
-</html>
+
+
+
+<?php
+require_once 'footer.php';
+?>
