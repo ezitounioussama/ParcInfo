@@ -25,9 +25,15 @@
                 <form action="check.php" class="login__registre" id="login-in" method="POST">
                     <h1 class="login__title">Sign In</h1>
 
+
                     <div class="login__box">
                         <i class='bx bx-user login__icon'></i>
-                        <input type="text" placeholder="CIN" class="login__input" name="name">
+                        <input type="text" placeholder="CIN" class="login__input" name="cin">
+                    </div>
+
+                    <div class="login__box">
+                        <i class='bx bx-user login__icon'></i>
+                        <input type="text" placeholder="username" class="login__input" name="name">
                     </div>
 
                     <div class="login__box">

@@ -1,11 +1,12 @@
 <?php
+session_start();
 require_once 'header.php';
 ?>
 <?php
 // Include config file
 require_once "config.php";
 
- 
+
 
 // Define variables and initialize with empty values
 $name = $CIN = $serie = $pays = $info = $category = $status =  "";
@@ -131,9 +132,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                 </button> -->
-                <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">
-                    Bonjour ,
-                </h1>
+                <!-- <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">
+                    Bonjour,
+                </h1> -->
             </div>
 
             <div class="flex items-center justify-between flex-1 gap-8 sm:justify-end">
@@ -148,12 +149,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <button type="button" class="flex items-center transition rounded-lg group shrink-0">
-                    <img class="object-cover w-10 h-10 rounded-full" src="https://www.morbius.movie/images/gallery/img2.jpg" alt="Simon Lewis" />
+                    <img class="object-cover w-10 h-10 rounded-full" src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg" alt="Simon Lewis" />
 
                     <p class="hidden ml-2 text-xs text-left sm:block">
-                        <strong class="block font-medium">Your Name</strong>
+                        <strong class="block font-medium"><?php echo ($_SESSION['username']); ?></strong>
 
-                        <span class="text-gray-500"> your informations</span>
+                        <span class="text-gray-500"><?php echo ($_SESSION['info']); ?></span>
                     </p>
 
 
@@ -309,97 +310,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
+    <div class="relative">
 
+        <input type="search" name="search_text" id="search_text" class="block mb-5 p-3 pl-10 w-full text-sm text-black rounded-lg border border-gray-700 focus:ring-blue-500 focus:border-blue-500 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required>
+
+    </div>
 
     <div class="overflow-x-auto">
 
-        <?php
-        // Include config file
-        require_once "config.php";
-
-        // Attempt select query execution
-        $sql = "SELECT * FROM materials";
-        if ($result = $pdo->query($sql)) {
-            if ($result->rowCount() > 0) {
 
 
 
-                echo '<table class="min-w-full text-sm border border-gray-100 divide-y-2 divide-gray-200">';
-                echo "<thead>";
-                echo '<tr class="divide-x divide-gray-100">';
-                echo '<th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">#</th>';
-                echo '<th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">CIN</th>';
-                echo '<th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Material Name</th>';
-                echo '<th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Serie</th>';
-                echo '<th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Status</th>';
-                echo '<th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Informations</th>';
-                echo '<th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">From where</th>';
-                echo '<th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Category</th>';
-                echo "</tr>";
-                echo "</thead>";
-                echo '<tbody class="divide-y divide-gray-200">';
-
-                while ($row = $result->fetch()) {
-                    echo "<tr>";
-                    echo '<td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap>' . $row['id'] . '</td>';
-                    echo '<td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap>' . $row['id'] . '</td>';
-                    echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap>' . $row['CIN'] . '</td>';
-                    echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap>' . $row['CIN'] . '</td>';
-                    echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap>' . $row['name'] . '</td>';
-                    echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap>' . $row['name'] . '</td>';
-                    echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap>' . $row['serie'] . '</td>';
-                    echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap>' . $row['serie'] . '</td>';
-                    echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap>' . $row['status'] . '</td>';
-                    echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap>' . $row['status'] . '</td>';
-                    echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap>' . $row['infos'] . '</td>';
-                    echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap>' . $row['infos'] . '</td>';
-                    echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap>' . $row['pays'] . '</td>';
-                    echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap>' . $row['pays'] . '</td>';
-                    echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap>' . $row['category'] . '</td>';
-                    echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap>' . $row['category'] . '</td>';
-                    echo '<td class="text-sm font-medium leading-5 text-center whitespace-no-wrap border-b border-gray-200 ">
-                    <a href="inc/update.php?id=' . $row['id'] . '" class="modal-open text-indigo-600 hover:text-indigo-900" data-bs-toggle="modal" data-bs-target="#exampleModal" >
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                      </svg>
-                    </a>
-    
-                  </td>';
-
-                    echo '<td class="text-sm font-medium leading-5 whitespace-no-wrap border-b border-gray-200 ">
-                    <a href="inc/delete.php?id=' . $row['id'] . '"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-600 hover:text-red-800"
-                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                      </svg></a>
-    
-                  </td>';
-                    // echo "<td>";
-                    // echo '<a href="read.php?id=' . $row['id'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
-                    // echo '<a href="update.php?id=' . $row['id'] . '" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
-                    // echo '<a href="delete.php?id=' . $row['id'] . '" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
-                    // echo "</td>";
-                    echo "</tr>";
-                }
-                echo "</tbody>";
-                echo "</table>";
-                // Free result set
-                unset($result);
-            } else {
-                echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
-            }
-        } else {
-            echo "Oops! Something went wrong. Please try again later.";
-        }
-
-        // Close connection
-        unset($pdo);
-        ?>
-
-
-
+        <div id="result"></div>
 
 
 
@@ -412,7 +334,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </section>
 
 
+<script>
+    $(document).ready(function() {
 
+        load_data();
+
+        function load_data(query) {
+            $.ajax({
+                url: "fetch.php",
+                method: "POST",
+                data: {
+                    query: query
+                },
+                success: function(data) {
+                    $('#result').html(data);
+                }
+            });
+        }
+        $('#search_text').keyup(function() {
+            var search = $(this).val();
+            if (search != '') {
+                load_data(search);
+            } else {
+                load_data();
+            }
+        });
+    });
+</script>
 
 
 <?php
