@@ -14,8 +14,10 @@ if (isset($_POST['submit'])) {
     if ($rs = $stmt->fetch()) {
         session_start();
         $_SESSION['droit'] = $rs;
+        $_SESSION['username'] = $log;
         if ($rs['function'] == "admin") {
             header('location:../admin_interface/');
+            echo '$log';
         } elseif ($rs['function'] == "user") {
             header('location:../user_interface/');
         }

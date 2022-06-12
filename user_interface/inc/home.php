@@ -132,7 +132,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </svg>
                 </button> -->
                 <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">
-                    Welcome Back
+                    Bonjour ,
                 </h1>
             </div>
 
