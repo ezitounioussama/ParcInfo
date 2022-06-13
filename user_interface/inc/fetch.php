@@ -26,7 +26,8 @@ if (mysqli_num_rows($result) > 0) {
     <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Serie</th>
     <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Status</th>
     <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Informations</th>
-    <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">From where</th>
+    <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Section</th>
+    <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Division</th>
     <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Category</th>
     </tr>
     </thead>
@@ -42,6 +43,7 @@ if (mysqli_num_rows($result) > 0) {
     <td class="px-4 py-2 text-gray-700 whitespace-nowrap">' . $row["status"] . '</td>
     <td class="px-4 py-2 text-gray-700 whitespace-nowrap">' . $row["infos"] . '</td>
     <td class="px-4 py-2 text-gray-700 whitespace-nowrap">' . $row["pays"] . '</td>
+    <td class="px-4 py-2 text-gray-700 whitespace-nowrap">' . $row["division"] . '</td>
     <td class="px-4 py-2 text-gray-700 whitespace-nowrap">' . $row["category"] . '</td>
     <td class="text-sm font-medium leading-5 text-center whitespace-no-wrap border-b border-gray-200 ">
                     <a href="update.php?id=' . $row['id'] . '" class="modal-open text-indigo-600 hover:text-indigo-900" data-bs-toggle="modal" data-bs-target="#exampleModal" >

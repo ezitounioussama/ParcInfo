@@ -20,7 +20,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
         // Attempt to execute the prepared statement
         if ($stmt->execute()) {
             // Records deleted successfully. Redirect to landing page
-            header("location: ../index.php");
+            header("location: home.php");
             exit();
         } else {
             echo "Oops! Something went wrong. Please try again later.";
@@ -58,7 +58,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
 
                 <input type="submit" value="Yes" class="block px-5 py-3 font-medium text-white bg-red-500 rounded-lg shadow-xl hover:bg-red-600">
 
-                <a href="../index.php" class="block px-5 py-3 mt-4 font-medium text-blue-500 rounded-lg hover:text-blue-600 sm:mt-0">
+                <a href="home.php" class="block px-5 py-3 mt-4 font-medium text-blue-500 rounded-lg hover:text-blue-600 sm:mt-0">
                     No
                 </a>
 
