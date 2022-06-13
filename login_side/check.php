@@ -18,9 +18,9 @@ if (isset($_POST['submit'])) {
         $_SESSION['username'] = $log;
         $_SESSION['info'] = $cin;
         if ($rs['function'] == "admin") {
-            header('location:../admin_interface/');
+            header('location:../admin_interface/inc/home.php');
         } elseif ($rs['function'] == "user") {
-            header('location:../user_interface/');
+            header('location:../user_interface/inc/home.php');
         }
     } else {
         header('location:../error.php');
