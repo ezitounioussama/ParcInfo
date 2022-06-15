@@ -149,7 +149,7 @@ require_once 'header.php';
 
             </div>
             <div>
-                <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="POST">
+                <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
                     <div class="mb-6">
                         <label for="name" class="block mb-2 text-sm text-gray-600">Username</label>
                         <input type="text" name="name" placeholder="John Doe" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300" value="<?php echo $name; ?>" />
@@ -170,10 +170,10 @@ require_once 'header.php';
 
                         </select>
                     </div>
-                    <div class="col-span-6">
-                        <input type="hidden" name="id" value="<?php echo $id; ?>" />
-                        <button class="rounded-lg bg-black text-sm p-2.5 text-white w-full block" type="submit" name="submit">
-                            Insert
+                    <div class="mt-10 col-span-6">
+                        <input type="hidden" name="UserId" value="<?php echo $id; ?>" />
+                        <button class="rounded-lg bg-[blue] text-sm p-2.5 text-white w-full block" type="submit" name="submit">
+                            Update
                         </button>
                     </div>
                 </form>
