@@ -4,7 +4,7 @@
     </div>
     <!-- left header section -->
     <div class="items-center hidden space-x-8 lg:flex">
-        <a href="">Users</a>
+        <a href="">Utilisateurs</a>
 
     </div>
     <!-- right header section -->

@@ -51,15 +51,15 @@ if (isset($_POST["UserId"]) && !empty($_POST["UserId"])) {
             </p>
             <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>" />
             <p class="mt-2 text-3xl font-bold sm:text-5xl">
-                Are you sure you want to delete this User record?
+                Voulez-vous vraiment supprimer <br>cet utilisateur?
             </p>
 
             <div class="mt-8 sm:items-center sm:justify-center sm:flex">
 
-                <input type="submit" value="Yes" class="block px-5 py-3 font-medium text-white bg-red-500 rounded-lg shadow-xl hover:bg-red-600">
+                <input type="submit" value="Oui" class="block px-5 py-3 font-medium text-white bg-red-500 rounded-lg shadow-xl hover:bg-red-600">
 
                 <a href="home.php" class="block px-5 py-3 mt-4 font-medium text-blue-500 rounded-lg hover:text-blue-600 sm:mt-0">
-                    No
+                    Non
                 </a>
 
             </div>

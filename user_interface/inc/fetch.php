@@ -22,13 +22,13 @@ if (mysqli_num_rows($result) > 0) {
     <tr class="divide-x divide-gray-100">
     <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">#</th>
     <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">CIN</th>
-    <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Material Name</th>
+    <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Nom De Materiel</th>
     <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Serie</th>
     <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Status</th>
-    <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Informations</th>
-    <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Section</th>
+    <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Informations De Materiel</th>
+    <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Section/Division</th>
     <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Division</th>
-    <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Category</th>
+    <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Categorie</th>
     </tr>
     </thead>
     <tbody class="divide-y divide-gray-200">';

@@ -145,13 +145,13 @@ require_once 'header.php';
     <div class="container mx-auto">
         <div class="max-w-xl p-5 mx-auto my-10 bg-white rounded-md shadow-sm">
             <div class="text-center">
-                <h1 class="my-3 text-3xl font-semibold text-gray-700">Insert Users</h1>
+                <h1 class="my-3 text-3xl font-semibold text-gray-700">Mise a jour des informations</h1>
 
             </div>
             <div>
                 <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
                     <div class="mb-6">
-                        <label for="name" class="block mb-2 text-sm text-gray-600">Username</label>
+                        <label for="name" class="block mb-2 text-sm text-gray-600">Nom d'utilisateur</label>
                         <input type="text" name="name" placeholder="John Doe" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300" value="<?php echo $name; ?>" />
                     </div>
                     <div class="mb-6">
@@ -159,7 +159,7 @@ require_once 'header.php';
                         <input type="text" name="cin" placeholder="XX-----" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300" value="<?php echo $CIN; ?>" />
                     </div>
                     <div class="mb-6">
-                        <label for="phone" class="text-sm text-gray-600">Password</label>
+                        <label for="phone" class="text-sm text-gray-600">Mot de passe</label>
                         <input type="password" name="pass" placeholder="*********" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md  focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300" value="<?php echo $pass; ?>" />
                     </div>
                     <div class="col-span-6 sm:col-span-3">
@@ -173,7 +173,7 @@ require_once 'header.php';
                     <div class="mt-10 col-span-6">
                         <input type="hidden" name="UserId" value="<?php echo $id; ?>" />
                         <button class="rounded-lg bg-[blue] text-sm p-2.5 text-white w-full block" type="submit" name="submit">
-                            Update
+                            Iserer
                         </button>
                     </div>
                 </form>

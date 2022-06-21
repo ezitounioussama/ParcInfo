@@ -205,7 +205,7 @@ require_once 'header.php';
                         </div>
                         <div class="col-span-3">
                             <label class="block mb-1 text-sm text-gray-600" for="name">
-                                Material Name
+                                Nom De Materiel
                             </label>
 
                             <input name="name" class="border border-gray-100 rounded-lg shadow-sm  w-full text-sm p-2.5" type="text" id="frst_name" value="<?php echo $name; ?>" />
@@ -240,7 +240,7 @@ require_once 'header.php';
 
                         <fieldset class="col-span-6">
                             <legend class="block mb-1 text-sm text-gray-600">
-                                Section
+                                Section/Division
                             </legend>
 
                             <div class="-space-y-px bg-white rounded-md shadow-sm">
@@ -267,7 +267,7 @@ require_once 'header.php';
 
                         <fieldset class="col-span-6">
                             <legend class="block mb-1 text-sm text-gray-600">
-                                Category
+                                Categorie
                             </legend>
 
                             <div class="-space-y-px bg-white rounded-md shadow-sm">

@@ -23,7 +23,7 @@
 
             <div class="login__forms">
                 <form action="check.php" class="login__registre" id="login-in" method="POST">
-                    <h1 class="login__title">Sign In</h1>
+                    <h1 class="login__title">Bonjour</h1>
 
 
                     <div class="login__box">
@@ -33,12 +33,12 @@
 
                     <div class="login__box">
                         <i class='bx bx-user login__icon'></i>
-                        <input type="text" placeholder="username" class="login__input" name="name">
+                        <input type="text" placeholder="Nom D'utilisateur" class="login__input" name="name">
                     </div>
 
                     <div class="login__box">
                         <i class='bx bx-lock-alt login__icon'></i>
-                        <input type="password" placeholder="Password" class="login__input" name="pass">
+                        <input type="password" placeholder="Mot De Passe" class="login__input" name="pass">
                     </div>
 
 

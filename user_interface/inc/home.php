@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Attempt to execute the prepared statement
             if ($stmt->execute()) {
                 // Records created successfully. Redirect to landing page
-                header("location: inc/home.php");
+                header("location: home.php");
                 exit();
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
@@ -197,7 +197,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="col-span-3">
                             <label class="block mb-1 text-sm text-gray-600" for="name">
-                                Material Name
+                                Nom De Materiel
                             </label>
 
                             <input name="name" class="border border-gray-100 rounded-lg shadow-sm  w-full text-sm p-2.5" type="text" id="frst_name" autofocus />
@@ -218,7 +218,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <input class="hidden group peer" type="radio" name="status" value="New" id="standard_alt" />
 
                                     <label class="block p-4 text-sm font-medium transition-colors border border-gray-100 rounded-lg shadow-sm cursor-pointer peer-checked:border-blue-500 hover:bg-gray-50 peer-checked:ring-1 peer-checked:ring-blue-500" for="standard_alt">
-                                        <span> New </span>
+                                        <span> Nouveau </span>
 
                                     </label>
 
@@ -231,7 +231,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <input class="hidden group peer" type="radio" name="status" value="Used" id="next_day_alt" />
 
                                     <label class="block p-4 text-sm font-medium transition-colors border border-gray-100 rounded-lg shadow-sm cursor-pointer peer-checked:border-blue-500 hover:bg-gray-50 peer-checked:ring-1 peer-checked:ring-blue-500" for="next_day_alt">
-                                        <span> Used </span>
+                                        <span> Utilisé </span>
 
 
                                     </label>
@@ -248,7 +248,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         <fieldset class="col-span-6">
                             <legend class="block mb-1 text-sm text-gray-600">
-                                Informations
+                                Informations De Materiel
                             </legend>
 
                             <div class="-space-y-px bg-white rounded-lg shadow-sm">
@@ -258,7 +258,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         <fieldset class="col-span-6">
                             <legend class="block mb-1 text-sm text-gray-600">
-                                Section
+                                Section/Division
                             </legend>
 
                             <div class="-space-y-px bg-white rounded-md shadow-sm">
@@ -284,7 +284,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <option>LAMRISSA</option>
                                         <option>AHMED TRICHA</option>
                                         <option>PACHALIK BOUKNADEL</option>
-
+                                        <option>DAEC</option>
+                                        <option>CABINET</option>
+                                        <option>CONSEIL PREFECTORAL</option>
+                                        <option>DSICG</option>
+                                        <option>DAUE</option>
+                                        <option>DRHMG</option>
+                                        <option>DAI</option>
+                                        <option>DE</option>
+                                        <option>DCL</option>
+                                        <option>HISBA</option>
+                                        <option>DAS</option>
+                                        <option>DBM</option>
+                                        <option>SG</option>
                                     </select>
                                 </div>
 
@@ -338,7 +350,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                             <fieldset class="col-span-6">
                                 <legend class="block mb-1 text-sm text-gray-600">
-                                    Category
+                                    Categorie
                                 </legend>
 
                                 <div class="-space-y-px bg-white rounded-md shadow-sm">
@@ -346,11 +358,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <label class="sr-only" for="country">Category</label>
 
                                         <select class="mb-3 border border-gray-200 relative rounded-t-lg w-full focus:z-10 text-sm p-2.5" id="country" name="category" autocomplete="country-name">
-                                            <option>Screen</option>
-                                            <option>Keyboard</option>
-                                            <option>Mouse</option>
-                                            <option>Printer</option>
-                                            <option>Computer-system-inheit</option>
+                                            <option>Ecran</option>
+                                            <option>Clavier</option>
+                                            <option>Souris</option>
+                                            <option>Imprimante</option>
+                                            <option>Unite Central</option>
                                             <option>Cables</option>
                                         </select>
                                     </div>
@@ -362,7 +374,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                             <div class="col-span-6">
                                 <button class="rounded-lg bg-black text-sm p-2.5 text-white w-full block" type="submit" name="submit">
-                                    Insert
+                                    Inserer
                                 </button>
                             </div>
                     </form>

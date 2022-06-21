@@ -47,19 +47,21 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="max-w-xl mx-auto text-center">
             <p class="text-sm font-medium text-gray-500">
-                Delete Record
+                Suppression
             </p>
             <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>" />
             <p class="mt-2 text-3xl font-bold sm:text-5xl">
-                Are you sure you want to delete this employee record?
+                Voulez-vous vraiment supprimer <br>cet enregistrement?
+
+
             </p>
 
             <div class="mt-8 sm:items-center sm:justify-center sm:flex">
 
-                <input type="submit" value="Yes" class="block px-5 py-3 font-medium text-white bg-red-500 rounded-lg shadow-xl hover:bg-red-600">
+                <input type="submit" value="Oui" class="block px-5 py-3 font-medium text-white bg-red-500 rounded-lg shadow-xl hover:bg-red-600">
 
                 <a href="home.php" class="block px-5 py-3 mt-4 font-medium text-blue-500 rounded-lg hover:text-blue-600 sm:mt-0">
-                    No
+                    Non
                 </a>
 
             </div>
