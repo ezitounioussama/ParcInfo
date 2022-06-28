@@ -26,7 +26,7 @@ if (mysqli_num_rows($result) > 0) {
     <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Serie</th>
     <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Status</th>
     <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Informations De Materiel</th>
-    <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Section/Division</th>
+    <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Section / Division</th>
     
     <th class="px-4 py-2 font-medium text-left text-gray-900 whitespace-nowrap">Categorie</th>
     </tr>

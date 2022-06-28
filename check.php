@@ -23,6 +23,6 @@ if (isset($_POST['submit'])) {
             header('location:user_interface/inc/home.php');
         }
     } else {
-        header('location:../error.php');
+        header('location:error.php');
     }
 }
