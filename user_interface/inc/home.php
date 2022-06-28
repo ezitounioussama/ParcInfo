@@ -9,8 +9,8 @@ require_once "config.php";
 
 
 // Define variables and initialize with empty values
-$name = $CIN = $serie = $pays = $division = $info = $category = $status =  "";
-$name_err = $CIN_err = $division_err =  $serie_err = $pays_err = $info_err = $category_err = $status_err = "";
+$name = $CIN = $serie = $pays = $info = $category = $status =  "";
+$name_err = $CIN_err =  $serie_err = $pays_err = $info_err = $category_err = $status_err = "";
 
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -31,13 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    // Validate Serie
-    $input_division = trim($_POST["CIN"]);
-    if (empty($input_division)) {
-        $division_err = "Please enter your CIN";
-    } else {
-        $division = $input_division;
-    }
+
 
     // Validate Serie
     $input_serie = trim($_POST["serie"]);
@@ -89,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check input errors before inserting in database
     if (empty($name_err) && empty($CIN_err) && empty($serie_err) && empty($status_err) && empty($info_err) && empty($pays_err) && empty($category_err)) {
         // Prepare an insert statement
-        $sql = "INSERT INTO materials (name, CIN , serie, status, infos, pays, division, category) VALUES (:name, :CIN, :serie, :status, :infos , :pays, :division , :category)";
+        $sql = "INSERT INTO materials (name, CIN , serie, status, infos, pays, category) VALUES (:name, :CIN, :serie, :status, :infos , :pays, :category)";
 
         if ($stmt = $pdo->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
@@ -99,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bindParam(":status", $param_status);
             $stmt->bindParam(":infos", $param_infos);
             $stmt->bindParam(":pays", $param_pays);
-            $stmt->bindParam(":division", $param_division);
+
             $stmt->bindParam(":category", $param_category);
             // Set parameters
             $param_name = $name;
@@ -108,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $param_status = $status;
             $param_infos = $info;
             $param_pays = $pays;
-            $param_division = $division;
+
             $param_category = $category;
 
             // Attempt to execute the prepared statement
@@ -314,44 +308,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-
-                            <fieldset class="col-span-6">
-                                <legend class="block mb-1 text-sm text-gray-600">
-                                    Division
-                                </legend>
-
-                                <div class="-space-y-px bg-white rounded-md shadow-sm">
-                                    <div>
-                                        <label class="sr-only" for="div">Division</label>
-
-                                        <select class="mb-2 border border-gray-200 relative rounded-t-lg w-full focus:z-10 text-sm p-2.5" id="div" name="division" autocomplete="div">
-                                            <option>DAEC</option>
-                                            <option>CABINET</option>
-                                            <option>CONSEIL PREFECTORAL</option>
-                                            <option>DSICG</option>
-                                            <option>DAUE</option>
-                                            <option>DRHMG</option>
-                                            <option>DAI</option>
-                                            <option>DE</option>
-                                            <option>DCL</option>
-                                            <option>HISBA</option>
-                                            <option>DAS</option>
-                                            <option>DBM</option>
-                                            <option>SG</option>
-
-
-                                        </select>
-                                    </div>
-
-
-                                </div>
-
-
-
-
-
-
-                            </fieldset>
 
 
                             <fieldset class="col-span-6">

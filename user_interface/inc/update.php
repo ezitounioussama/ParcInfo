@@ -3,8 +3,8 @@
 require_once "config.php";
 
 // Define variables and initialize with empty values
-$name = $CIN = $serie = $pays = $info = $division = $category = $status =  "";
-$name_err = $CIN_err =  $serie_err = $division_err = $pays_err = $info_err = $category_err = $status_err = "";
+$name = $CIN = $serie = $pays = $info = $category = $status =  "";
+$name_err = $CIN_err =  $serie_err = $pays_err = $info_err = $category_err = $status_err = "";
 
 // Processing form data when form is submitted
 if (isset($_POST["id"]) && !empty($_POST["id"])) {
@@ -27,13 +27,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
         $CIN = $input_CIN;
     }
 
-    // Validate Serie
-    $input_division = trim($_POST["division"]);
-    if (empty($input_division)) {
-        $division_err = "Please enter your CIN";
-    } else {
-        $division = $input_division;
-    }
+
 
 
     // Validate Serie
@@ -79,9 +73,9 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     }
 
     // Check input errors before inserting in database
-    if (empty($name_err) && empty($CIN_err) && empty($serie_err) && empty($status_err) && empty($info_err) && empty($pays_err) && empty($division_err) && empty($category_err)) {
+    if (empty($name_err) && empty($CIN_err) && empty($serie_err) && empty($status_err) && empty($info_err) && empty($pays_err) && empty($category_err)) {
         // Prepare an update statement
-        $sql = "UPDATE materials SET CIN=:CIN, name=:name, serie=:serie, status=:status, infos=:infos , pays=:pays ,division =:division, category=:category WHERE id=:id";
+        $sql = "UPDATE materials SET CIN=:CIN, name=:name, serie=:serie, status=:status, infos=:infos , pays=:pays , category=:category WHERE id=:id";
 
         if ($stmt = $pdo->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
@@ -91,7 +85,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
             $stmt->bindParam(":status", $param_status);
             $stmt->bindParam(":infos", $param_infos);
             $stmt->bindParam(":pays", $param_pays);
-            $stmt->bindParam(":division", $param_division);
+
             $stmt->bindParam(":category", $param_category);
             $stmt->bindParam(":id", $param_id);
 
@@ -102,7 +96,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
             $param_status = $status;
             $param_infos = $info;
             $param_pays = $pays;
-            $param_division = $division;
+
             $param_category = $category;
 
             $param_id = $id;
@@ -152,7 +146,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                     $status = $row["status"];
                     $info = $row["infos"];
                     $pays = $row["pays"];
-                    $division = $row["division"];
+
                     $category = $row["category"];
                 } else {
                     // URL doesn't contain valid id. Redirect to error page
@@ -251,18 +245,7 @@ require_once 'header.php';
                             </div>
                         </fieldset>
 
-                        <fieldset class="col-span-6">
-                            <legend class="block mb-1 text-sm text-gray-600">
-                                Division
-                            </legend>
 
-                            <div class="-space-y-px bg-white rounded-md shadow-sm">
-                                <input name="division" class="border border-gray-100 rounded-lg shadow-sm  w-full text-sm p-2.5" type="text" id="division" value="<?php echo $division; ?>" />
-
-
-
-                            </div>
-                        </fieldset>
 
 
                         <fieldset class="col-span-6">
