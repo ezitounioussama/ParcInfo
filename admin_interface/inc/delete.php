@@ -36,7 +36,7 @@ if (isset($_POST["UserId"]) && !empty($_POST["UserId"])) {
     // Check existence of id parameter
     if (empty(trim($_GET["UserId"]))) {
         // URL doesn't contain id parameter. Redirect to error page
-        header("location: error.php");
+        header("location: ../../error.php");
         exit();
     }
 }
@@ -49,7 +49,7 @@ if (isset($_POST["UserId"]) && !empty($_POST["UserId"])) {
             <p class="text-sm font-medium text-gray-500">
                 Delete Record
             </p>
-            <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>" />
+            <input type="hidden" name="UserId" value="<?php echo trim($_GET["UserId"]); ?>" />
             <p class="mt-2 text-3xl font-bold sm:text-5xl">
                 Voulez-vous vraiment supprimer <br>cet utilisateur?
             </p>

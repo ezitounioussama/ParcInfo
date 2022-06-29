@@ -161,7 +161,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap">' . $row["pass"] . '</td>';
                 echo '<td class="px-4 py-2 text-gray-700 whitespace-nowrap">' . $row["function"] . '</td>';
                 echo '<td class="text-sm font-medium leading-5 text-center whitespace-no-wrap border-b border-gray-200 ">
-                <a href="inc/update.php?UserId=' . $row['UserId'] . '" class="modal-open text-indigo-600 hover:text-indigo-900" >
+                <a href="update.php?UserId=' . $row['UserId'] . '" class="modal-open text-indigo-600 hover:text-indigo-900" >
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -171,7 +171,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
                       </td>';
                 echo  '<td class="text-sm font-medium leading-5 whitespace-no-wrap border-b border-gray-200 ">
-                  <a href="inc/delete.php?UserId=' . $row['UserId'] . '"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-600 hover:text-red-800"
+                  <a href="delete.php?UserId=' . $row['UserId'] . '"><svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-red-600 hover:text-red-800"
                       fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
